@@ -1,0 +1,324 @@
+.api-page{
+    padding:10px;
+}
+
+.api-page h1{
+    font-size:36px;
+    color:#0f172a;
+    margin-bottom:8px;
+}
+
+.api-page p{
+    color:#64748b;
+    margin-bottom:25px;
+}
+
+/* Alerts */
+
+.success-message{
+
+    background:#dcfce7;
+
+    color:#166534;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+    border-left:5px solid #22c55e;
+
+}
+
+.error-message{
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+    border-left:5px solid #ef4444;
+
+}
+
+/* Cards */
+
+.api-form-card,
+.api-table-card{
+
+    background:#ffffff;
+
+    padding:25px;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    margin-bottom:30px;
+
+}
+
+.api-form-card h2,
+.api-table-card h2{
+
+    margin-bottom:20px;
+
+    color:#1e293b;
+
+}
+
+/* Form */
+
+.api-form-card form{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:18px;
+
+}
+
+.api-form-card input,
+.api-form-card select{
+
+    padding:14px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.api-form-card input:focus,
+.api-form-card select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.15);
+
+}
+
+/* Buttons */
+
+.api-form-card button{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    transition:.3s;
+
+    padding:14px;
+
+}
+
+.api-form-card button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.cancel-btn{
+
+    background:#64748b !important;
+
+}
+
+.cancel-btn:hover{
+
+    background:#475569 !important;
+
+}
+
+/* Table */
+
+.api-table-card table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.api-table-card th{
+
+    background:#f8fafc;
+
+    color:#334155;
+
+    text-align:left;
+
+    padding:16px;
+
+}
+
+.api-table-card td{
+
+    padding:16px;
+
+    border-bottom:1px solid #e5e7eb;
+
+    vertical-align:middle;
+
+}
+
+.api-table-card tr:hover{
+
+    background:#f8fafc;
+
+}
+
+/* Method Badge */
+
+.method{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    background:#dbeafe;
+
+    color:#1d4ed8;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+/* Action Buttons */
+
+.edit-btn{
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    margin-right:8px;
+
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.delete-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+    border:none;
+
+    width:38px;
+
+    height:38px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.delete-btn:hover{
+
+    background:#dc2626;
+
+}
+
+/* Empty State */
+
+.api-table-card td[colspan]{
+
+    text-align:center;
+
+    color:#64748b;
+
+    padding:30px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .api-page h1{
+
+        font-size:28px;
+
+    }
+
+    .api-form-card form{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .api-table-card{
+
+        overflow-x:auto;
+
+    }
+
+    .api-table-card table{
+
+        min-width:700px;
+
+    }
+
+}

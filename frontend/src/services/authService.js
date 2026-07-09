@@ -1,0 +1,53 @@
+import api from "./api";
+
+export const loginUser = async (email, password) => {
+
+    const response = await api.post("/auth/login", {
+        email,
+        password,
+    });
+
+    return response.data;
+};
+
+export const registerUser = async (
+    username,
+    email,
+    password
+) => {
+
+    const response = await api.post("/auth/register", {
+        username,
+        email,
+        password,
+    });
+
+    return response.data;
+};
+
+// // Change Password// 
+
+export const changePassword = async (
+    current_password,
+    new_password
+) => {
+
+    const response = await api.put(
+        "/auth/change-password",
+        {
+            current_password,
+            new_password,
+        }
+    );
+
+    return response.data;
+};
+// Get Logged-in User Profile
+
+export const getProfile = async () => {
+
+    const response = await api.get("/auth/profile");
+
+    return response.data;
+
+};
