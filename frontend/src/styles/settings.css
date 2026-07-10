@@ -22,8 +22,6 @@
 
 }
 
-/* Cards */
-
 .settings-card{
 
     background:#fff;
@@ -54,7 +52,6 @@
 
 }
 
-/* Inputs */
 
 .settings-card input{
 
@@ -96,7 +93,6 @@
 
 }
 
-/* Checkbox */
 
 .checkbox{
 
@@ -130,7 +126,6 @@
 
 }
 
-/* Buttons */
 
 .save-btn{
 
@@ -167,9 +162,6 @@
     background:#1d4ed8;
 
 }
-
-/* Logout */
-
 .logout-btn{
 
     display:flex;
@@ -205,8 +197,6 @@
     background:#dc2626;
 
 }
-
-/* Responsive */
 
 @media(max-width:768px){
 

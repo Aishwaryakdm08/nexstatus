@@ -25,8 +25,6 @@ export const registerUser = async (
     return response.data;
 };
 
-// // Change Password// 
-
 export const changePassword = async (
     current_password,
     new_password
@@ -42,7 +40,6 @@ export const changePassword = async (
 
     return response.data;
 };
-// Get Logged-in User Profile
 
 export const getProfile = async () => {
 

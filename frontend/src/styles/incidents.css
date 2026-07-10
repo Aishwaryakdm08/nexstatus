@@ -284,8 +284,6 @@
     cursor:pointer;
 }
 
-/* ================= RESPONSIVE ================= */
-
 @media(max-width:768px){
 
     .filter-bar{

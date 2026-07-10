@@ -11,8 +11,6 @@ from models.incident import Incident
 from routes.dashboard import dashboard_bp
 from scheduler import start_scheduler
 from flask_cors import CORS
-
-
 import os
 from dotenv import load_dotenv
 

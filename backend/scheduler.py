@@ -5,7 +5,6 @@ from services.monitor_service import check_api
 
 scheduler = BackgroundScheduler()
 
-
 def monitor_all_apis():
 
     print("Running automatic monitoring...")
@@ -17,7 +16,6 @@ def monitor_all_apis():
         print(f"Checking: {api.name}")
 
         check_api(api)
-
 
 def start_scheduler(app):
 

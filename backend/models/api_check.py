@@ -1,7 +1,6 @@
 from models.user import db
 from datetime import datetime
 
-
 class APICheck(db.Model):
 
     __tablename__ = "api_checks"

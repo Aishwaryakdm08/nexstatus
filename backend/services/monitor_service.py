@@ -7,14 +7,11 @@ from models.incident import Incident
 from models.api import API
 from models.user import db
 
-
-
 def check_api(api):
 
     start_time = time.time()
 
     try:
-
         response = requests.get(
             api.url,
             timeout=10,
@@ -24,20 +21,14 @@ def check_api(api):
             }
         )
 
-
         response_time = round(
             (time.time() - start_time) * 1000,
             2
         )
 
-
         status_code = response.status_code
 
-
-
-        # -------------------------------
-        # STATUS DECISION LOGIC
-        # -------------------------------
+        # STATUS DECISION LOGIC # 
 
         if 200 <= status_code < 400:
 
@@ -72,9 +63,6 @@ def check_api(api):
                 f"Unexpected HTTP {status_code}"
             )
 
-
-
-
         # Save API Check Result
 
         api_check = APICheck(
@@ -88,10 +76,7 @@ def check_api(api):
 
         )
 
-
         db.session.add(api_check)
-
-
 
         # Create Incident if API is DOWN
 
@@ -112,14 +97,9 @@ def check_api(api):
 
             )
 
-
             db.session.add(incident)
 
-
-
         db.session.commit()
-
-
 
         return {
 
@@ -135,23 +115,18 @@ def check_api(api):
 
         }
 
-
-
     except requests.exceptions.Timeout:
-
 
         response_time = round(
             (time.time() - start_time) * 1000,
             2
         )
 
-
         save_failure(
             api,
             "Request Timeout",
             response_time
         )
-
 
         return {
 
@@ -167,9 +142,6 @@ def check_api(api):
 
         }
 
-
-
-
     except requests.exceptions.ConnectionError:
 
 
@@ -178,13 +150,11 @@ def check_api(api):
             2
         )
 
-
         save_failure(
             api,
             "Connection Failed",
             response_time
         )
-
 
         return {
 
@@ -200,25 +170,18 @@ def check_api(api):
 
         }
 
-
-
-
-
     except Exception as e:
-
 
         response_time = round(
             (time.time() - start_time) * 1000,
             2
         )
 
-
         save_failure(
             api,
             str(e),
             response_time
         )
-
 
         return {
 
@@ -234,11 +197,7 @@ def check_api(api):
 
         }
 
-
-
-
 def save_failure(api, error, response_time):
-
 
     api_check = APICheck(
 
@@ -256,10 +215,7 @@ def save_failure(api, error, response_time):
 
     )
 
-
     db.session.add(api_check)
-
-
 
     incident = Incident(
 
@@ -275,8 +231,6 @@ def save_failure(api, error, response_time):
 
     )
 
-
     db.session.add(incident)
-
 
     db.session.commit()
