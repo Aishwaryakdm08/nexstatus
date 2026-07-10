@@ -27,9 +27,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 CORS(
-    app,
-    resources={r"/api/*": {"origins": "http://localhost:5173"}},
-    supports_credentials=True
+    app
 )
 
 app.config.from_object(Config)
@@ -68,4 +66,4 @@ with app.app_context():
 start_scheduler(app)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
