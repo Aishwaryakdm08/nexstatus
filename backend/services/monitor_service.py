@@ -77,6 +77,8 @@ def check_api(api):
         )
 
         db.session.add(api_check)
+        
+        api.last_checked = datetime.utcnow()
 
         # Create Incident if API is DOWN
 
@@ -232,5 +234,7 @@ def save_failure(api, error, response_time):
     )
 
     db.session.add(incident)
+
+    api.last_checked = datetime.utcnow()
 
     db.session.commit()

@@ -53,6 +53,11 @@ class API(db.Model):
         onupdate=datetime.utcnow
     )
 
+    last_checked = db.Column(
+        db.DateTime,
+        nullable=True
+    )
+
     user_id = db.Column(
         db.Integer,
         nullable=False
