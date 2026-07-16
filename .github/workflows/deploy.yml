@@ -1,0 +1,38 @@
+name: Deploy NexStatus
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@v1.2.0
+
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}
+
+          script: |
+            cd /home/ec2-user/nexstatus
+
+            git pull origin main
+
+            source backend/venv/bin/activate
+
+            pip install -r backend/requirements.txt
+
+            sudo systemctl restart nexstatus
+
+            sudo systemctl restart nexstatus-scheduler
+
+            sudo systemctl reload nginx
+
+            sleep 5
+
+            curl -f http://127.0.0.1:5000/
