@@ -1,38 +1,56 @@
 # NexStatus
 
-A cloud-based API Monitoring and Status Management Platform 
-
-## Overview
-
-NexStatus is a full-stack cloud application developed to simplify API health monitoring for developers and organizations. The platform continuously performs automated health checks on registered APIs, records response metrics, detects downtime, and provides a centralized dashboard for monitoring service availability.
-
-The system includes secure JWT-based authentication, real-time monitoring, incident tracking, historical analytics, and visual dashboards to help users quickly identify and respond to API failures.
+A Cloud-Based API Monitoring and Status Management Platform
 
 ---
 
-## Key Features
+# Overview
 
-- Secure User Authentication using JWT
-- API Registration and Management
-- Automated API Health Monitoring
+NexStatus is a production-ready full-stack cloud application designed to monitor the availability and performance of REST APIs. It continuously performs automated health checks on registered APIs, records response metrics, detects service outages, and provides a centralized dashboard for monitoring API health in real time.
+
+The platform features secure JWT-based authentication, configurable monitoring intervals, automated incident detection, uptime analytics, and historical monitoring logs. The application is deployed on Amazon Web Services (AWS) with a complete production setup using Nginx, Gunicorn, HTTPS, Terraform, and GitHub Actions CI/CD.
+
+---
+
+# Key Features
+
+### Authentication & User Management
+
+- Secure JWT Authentication
+- User Registration & Login
+- Profile Management
+- Password Update
+
+### API Monitoring
+
+- Register and Manage APIs
+- Automated API Health Checks
 - Configurable Monitoring Intervals
+- HTTP Status Code Monitoring
 - Response Time Measurement
-- HTTP Status Code Tracking
-- API Availability Monitoring (UP / DOWN / DEGRADED)
+- API Availability Tracking
+- API Status (UP / DOWN / DEGRADED)
+
+### Incident Management
+
 - Automatic Incident Detection
 - Incident Resolution Tracking
-- Search and Filter Incidents
-- Dashboard Analytics
-- Uptime Percentage Calculation
-- Recent API Activity Monitoring
-- Interactive Charts and Statistics
-- User Profile & Password Management
+- Incident History
+- Search & Filter Incidents
+
+### Analytics Dashboard
+
+- API Uptime Percentage
+- Average Response Time
+- Recent Monitoring Activity
+- Interactive Charts & Statistics
+- Monitoring History
 
 ---
 
-## Technology Stack
+# Technology Stack
 
-### Frontend
+## Frontend
 
 - React.js
 - React Router DOM
@@ -41,7 +59,7 @@ The system includes secure JWT-based authentication, real-time monitoring, incid
 - React Icons
 - CSS3
 
-### Backend
+## Backend
 
 - Python
 - Flask
@@ -50,38 +68,63 @@ The system includes secure JWT-based authentication, real-time monitoring, incid
 - APScheduler
 - Requests
 
-### Database
+## Database
 
-- MySQL (Amazon RDS)
+- MySQL
+- Amazon RDS
 
-### Cloud & DevOps
+## Cloud & Infrastructure
 
-- Amazon Web Services (AWS)
+- Amazon EC2
+- Amazon RDS
+- IAM
+- CloudWatch
+- Security Groups
+
+## DevOps
+
+- Terraform
 - Git
 - GitHub
+- GitHub Actions (CI/CD)
+- Nginx
+- Gunicorn
+- Let's Encrypt SSL
+- DuckDNS
 
 ---
 
-## Installation
 
-### Clone the Repository
+
+# Installation
+
+## Clone Repository
 
 ```bash
 git clone https://github.com/Aishwaryakdm08/nexstatus.git
+
 cd nexstatus
 ```
 
-### Backend Setup
+---
+
+## Backend Setup
 
 ```bash
 cd backend
+
+python -m venv venv
+
+source venv/bin/activate      # Linux
 
 pip install -r requirements.txt
 
 python app.py
 ```
 
-### Frontend Setup
+---
+
+## Frontend Setup
 
 ```bash
 cd frontend
@@ -90,16 +133,25 @@ npm install
 
 npm run dev
 ```
+
 ---
 
-## Deployment
+# Production Deployment
 
-The application is designed for cloud deployment using Amazon Web Services (AWS).
+The application is deployed on Amazon Web Services (AWS).
 
-Deployment includes:
+Production infrastructure includes:
 
-- Frontend Hosting
-- Flask Backend Deployment
-- Amazon RDS Database
-- Cloud-based API Monitoring
-- GitHub Version Control
+- Amazon EC2
+- Amazon RDS (MySQL)
+- Nginx Reverse Proxy
+- Gunicorn WSGI Server
+- HTTPS using Let's Encrypt
+- DuckDNS Domain
+- GitHub Actions CI/CD
+- Terraform Infrastructure as Code
+- CloudWatch Monitoring
+- IAM Role-based Access
+
+---
+
