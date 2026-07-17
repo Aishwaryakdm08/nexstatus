@@ -1,4 +1,4 @@
-vpc_id = "vpc-0f31a52eae749ab9e"
+vpc_id = "<YOUR_VPC_ID>"
 
 db_identifier = "nexstatus-db"
 
@@ -8,9 +8,9 @@ db_instance_class = "db.t4g.micro"
 
 db_allocated_storage = 20
 
-db_subnet_group_name = "default-vpc-0f31a52eae749ab9e"
+db_subnet_group_name = "<YOUR_DB_SUBNET_GROUP>"
 
-db_security_group = "sg-0198f2c8f111db355"
+db_security_group = "<YOUR_DB_SECURITY_GROUP>"
 
 db_publicly_accessible = true
 
