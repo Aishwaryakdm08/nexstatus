@@ -16,12 +16,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-print("USER =", os.getenv("DB_USER"))
-print("HOST =", os.getenv("DB_HOST"))
-print("PORT =", os.getenv("DB_PORT"))
-print("DB =", os.getenv("DB_NAME"))
-print("PASSWORD =", os.getenv("DB_PASSWORD"))
-
 app = Flask(__name__)
 
 app.url_map.strict_slashes = False
